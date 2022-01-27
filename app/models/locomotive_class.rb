@@ -1,0 +1,2 @@
+class LocomotiveClass < ApplicationRecord
+end
