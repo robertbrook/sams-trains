@@ -1,4 +1,5 @@
 drop table if exists haulage_capabilities;
+drop table if exists detail_scores;
 drop table if exists performance_scores;
 drop table if exists mechanism_scores;
 drop table if exists quality_scores;
@@ -31,30 +32,30 @@ create table scales (
 );
 create table locomotive_classes (
 	id serial,
-	name varchar(20) not null,
-	nickname varchar(30) not null,
-	wikidata_id varchar(20) not null,
+	name varchar(50) not null,
+	nickname varchar(50),
+	wikidata_id varchar(20),
 	primary key (id)
 );
 create table manufacturers (
 	id serial,
 	name varchar(30) not null,
-	wikidata_id varchar(20) not null,
+	wikidata_id varchar(20),
 	primary key (id)
 );
 create table operators (
 	id serial,
-	name varchar(20) not null,
-	full_name varchar(50) not null,
+	name varchar(50) not null,
+	full_name varchar(50),
 	is_fictional boolean default false,
-	wikidata_id varchar(20) not null,
+	wikidata_id varchar(20),
 	primary key (id)
 );
 create table liveries (
 	id serial,
 	name varchar(30) not null,
 	is_fictional boolean default false,
-	operator_id int not null,
+	operator_id int,
 	constraint fk_operator foreign key (operator_id) references operators(id),
 	primary key (id)
 );
@@ -80,6 +81,14 @@ create table reviews (
 	youtube_url varchar(255) not null,
 	model_id int not null,
 	constraint fk_model foreign key (model_id) references models(id),
+	primary key (id)
+);
+create table detail_scores (
+	id serial,
+	review_id int not null,
+	score_id int not null,
+	constraint fk_review foreign key (review_id) references reviews(id),
+	constraint fk_score foreign key (score_id) references scores(id),
 	primary key (id)
 );
 create table performance_scores (
