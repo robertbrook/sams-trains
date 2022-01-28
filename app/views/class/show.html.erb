@@ -1,0 +1,10 @@
+<%= content_tag( 'h1', @locomotive_class.name ) %>
+
+<%= content_tag( 'p', "Nickname: #{@locomotive_class.nickname}" ) if @locomotive_class.nickname %>
+
+<%= content_tag( 'p', link_to( 'Wikipedia', @locomotive_class.wikipedia_url ) ) if @locomotive_class.wikidata_id %>
+<%= content_tag( 'p', "Wikidata ID: #{link_to( @locomotive_class.wikidata_id, @locomotive_class.wikidata_url )}".html_safe ) if @locomotive_class.wikidata_id %>
+
+<ol>
+	<%= render :partial => 'model/model', :collection => @locomotive_class.models %>
+</ol>
