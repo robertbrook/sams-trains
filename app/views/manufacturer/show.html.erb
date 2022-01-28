@@ -1,4 +1,5 @@
 <%= content_tag( 'h1', @manufacturer.name ) %>
+<%= content_tag( 'p', "Wikidata ID: #{link_to( @manufacturer.wikidata_id, @manufacturer.wikidata_url )}".html_safe ) if @manufacturer.wikidata_id %>
 
 <ol>
 	<%= render :partial => 'model/model', :collection => @manufacturer.models %>
