@@ -1,5 +1,11 @@
 <%= content_tag( 'h1', @manufacturer.name ) %>
+<%= content_tag( 'p', link_to( 'Wikipedia', @manufacturer.wikipedia_url ) ) if @manufacturer.wikidata_id %>
 <%= content_tag( 'p', "Wikidata ID: #{link_to( @manufacturer.wikidata_id, @manufacturer.wikidata_url )}".html_safe ) if @manufacturer.wikidata_id %>
+
+
+
+
+https://www.wikidata.org/wiki/Special:GoToLinkedPage/enwiki/Q42
 
 <ol>
 	<%= render :partial => 'model/model', :collection => @manufacturer.models %>
