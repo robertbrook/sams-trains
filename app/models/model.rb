@@ -8,6 +8,6 @@ class Model < ApplicationRecord
   has_many :reviews, -> { order 'published_on' }
   
   def title
-    self.scale_name + ' ' +self.manufacturer_name + ' ' + self.operator_name + ' ' + self.locomotive_class_name
+    self.scale_name + ' ' +self.manufacturer_name + ' ' + self.operator_name + ' Class ' + self.locomotive_class_name
   end
 end
