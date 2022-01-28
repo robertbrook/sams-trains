@@ -2,7 +2,7 @@
 	<tbody>
 		<tr>
 			<%= content_tag( 'th', 'Scale:' ) %>
-			<%= content_tag( 'td', details.scale_name ) %>
+			<%= content_tag( 'td', link_to( details.scale_name, scale_show_url( :scale => details.scale_id ) ) ) %>
 		</tr>
 		<tr>
 			<%= content_tag( 'th', 'Manufacturer:' ) %>
