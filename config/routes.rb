@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'classes/:class' => 'class#show', as: :class_show
   
   get 'operators' => 'operator#index', as: :operator_list
+  get 'operators/:operator' => 'operator#show', as: :operator_show
   
   get 'liveries' => 'livery#index', as: :livery_list
   
