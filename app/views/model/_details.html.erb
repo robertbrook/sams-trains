@@ -14,7 +14,7 @@
 		</tr>
 		<tr>
 			<%= content_tag( 'th', 'Operator:' ) %>
-			<%= content_tag( 'td', details.operator_name ) %>
+			<%= content_tag( 'td', link_to( details.operator_name, operator_show_url( :operator => details.operator_id ) ) ) %>
 		</tr>
 		<tr>
 			<%= content_tag( 'th', 'Livery:' ) %>
