@@ -22,6 +22,10 @@ Rails.application.routes.draw do
   get 'operators' => 'operator#index', as: :operator_list
   get 'operators/:operator' => 'operator#show', as: :operator_show
   
+  get 'operators/:operator/liveries' => 'operator_livery#index', as: :operator_livery_list
+  
+  get 'operators/:operator/models' => 'operator_model#index', as: :operator_model_list
+  
   get 'liveries' => 'livery#index', as: :livery_list
   
   get 'detail_scores' => 'detail_score#index', as: :detail_score_list
