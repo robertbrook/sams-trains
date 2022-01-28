@@ -1,0 +1,4 @@
+<li>
+	<%= content_tag( 'h2', review.title ) %>
+	<%= content_tag( 'p', "Reviewed by Sam on: #{review.published_on.strftime( '%d-%m-%Y' )}" ) %>
+</li>
