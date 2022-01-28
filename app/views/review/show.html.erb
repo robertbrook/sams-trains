@@ -1,0 +1,40 @@
+<%= content_tag( 'h1', @review.title ) %>
+<%= content_tag( 'p', "Reviewed by Sam on: #{@review.published_on.strftime( '%d-%m-%Y' )}" ) %>
+<%= content_tag( 'p', "Overall score: #{@review.score}" ) %>
+
+
+<%= content_tag( 'h2', 'Scores' ) %>
+<table>
+	<thead>
+		<tr>
+			<%= content_tag( 'td', 'Category' ) %>
+			<%= content_tag( 'td', 'Score' ) %>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<%= content_tag( 'td', 'Details' ) %>
+			<%= content_tag( 'td', @review.inline_detail_score ) %>
+		</tr>
+		<tr>
+			<%= content_tag( 'td', 'Performance' ) %>
+			<%= content_tag( 'td', @review.inline_performance_score ) %>
+		</tr>
+		<tr>
+			<%= content_tag( 'td', 'Power' ) %>
+			<%= content_tag( 'td', "#{@review.number_of_coaches} coaches" ) %>
+		</tr>
+		<tr>
+			<%= content_tag( 'td', 'Mechanism' ) %>
+			<%= content_tag( 'td', @review.inline_mechanism_score ) %>
+		</tr>
+		<tr>
+			<%= content_tag( 'td', 'Quality' ) %>
+			<%= content_tag( 'td', @review.inline_quality_score ) %>
+		</tr>
+		<tr>
+			<%= content_tag( 'td', 'Value' ) %>
+			<%= content_tag( 'td', @review.inline_value_score ) %>
+		</tr>
+	</tbody>
+</table>
