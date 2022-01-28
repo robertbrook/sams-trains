@@ -7,4 +7,14 @@ class Review < ApplicationRecord
   belongs_to :mechanism_score
   belongs_to :quality_score
   belongs_to :value_score
+  
+  has_one :scale, :through => :model
+  has_one :operator, :through => :model
+  has_one :manufacturer, :through => :model
+  has_one :livery, :through => :model
+  has_one :locomotive_class, :through => :model
+  
+  def title
+    'Review of a ' + self.scale_name + ' ' +self.manufacturer_name + ' ' + self.operator_name + ' Class ' + self.locomotive_class_name
+  end
 end
