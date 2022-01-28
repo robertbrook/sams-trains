@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'reviews/:review' => 'review#show', as: :review_show
   
   get 'models' => 'model#index', as: :model_list
+  get 'models/:model' => 'model#show', as: :model_show
   
   get 'manufacturers' => 'manufacturer#index', as: :manufacturer_list
   
