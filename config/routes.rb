@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'models/:model' => 'model#show', as: :model_show
   
   get 'manufacturers' => 'manufacturer#index', as: :manufacturer_list
+  get 'manufacturers/:manufacturer' => 'manufacturer#show', as: :manufacturer_show
   
   get 'scales' => 'scale#index', as: :scale_list
   
