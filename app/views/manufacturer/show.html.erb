@@ -1,0 +1,5 @@
+<%= content_tag( 'h1', @manufacturer.name ) %>
+
+<ol>
+	<%= render :partial => 'model/model', :collection => @manufacturer.models %>
+</ol>
