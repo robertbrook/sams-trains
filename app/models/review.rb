@@ -17,4 +17,8 @@ class Review < ApplicationRecord
   def title
     'Review of a ' + self.scale_name + ' ' +self.manufacturer_name + ' ' + self.operator_name + ' Class ' + self.locomotive_class_name
   end
+  
+  def youtube_id
+    self.youtube_url.split( '=' ).last
+  end
 end
