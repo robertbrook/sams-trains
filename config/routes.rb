@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'scales/:scale' => 'scale#show', as: :scale_show
   
   get 'classes' => 'class#index', as: :class_list
+  get 'classes/:class' => 'class#show', as: :class_show
   
   get 'operators' => 'operator#index', as: :operator_list
   
