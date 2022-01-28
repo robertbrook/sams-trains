@@ -6,8 +6,6 @@ task :setup => [
   :import_manufacturers,
   :import_operators,
   :import_liveries,
-  :import_scores,
-  :import_coaches,
   :import_reviews
 ]
 
@@ -63,29 +61,6 @@ task :import_liveries => :environment do
   end
 end
 
-task :import_scores => :environment do
-  puts "importing scores"
-  CSV.open("db/data/scores.tsv", col_sep: "\t").each do |row|
-    score = Score.new
-    score.score = row[0]
-    score.save
-  end
-end
-
-task :import_coaches => :environment do
-  puts "importing coaches"
-  CSV.open("db/data/reviews.tsv", col_sep: "\t").each do |row|
-    if row[10] != 'Not given' and !row[10].nil?
-      coach = Coach.find_by_number( row[10] )
-      unless coach
-        coach = Coach.new
-        coach.number = row[10]
-        coach.save
-      end
-    end
-  end
-end
-
 task :import_reviews => :environment do
   puts "importing models, reviews and links to scores"
   CSV.open("db/data/reviews.tsv", col_sep: "\t").each do |row|
@@ -112,6 +87,44 @@ task :import_reviews => :environment do
       model.operator = operator
       model.livery = livery if livery
       model.save
+      
+      # Create scores
+      haulage_capability = HaulageCapability.find_by_number_of_coaches( row[10] )
+      unless haulage_capability
+        haulage_capability = HaulageCapability.new
+        haulage_capability.number_of_coaches = row[10]
+        haulage_capability.save
+      end
+      detail_score = DetailScore.find_by_score( row[8] )
+      unless detail_score
+        detail_score = DetailScore.new
+        detail_score.score = row[8]
+        detail_score.save
+      end
+      performance_score = PerformanceScore.find_by_score( row[9] )
+      unless performance_score
+        performance_score = PerformanceScore.new
+        performance_score.score = row[9]
+        performance_score.save
+      end
+      mechanism_score = MechanismScore.find_by_score( row[11] )
+      unless mechanism_score
+        mechanism_score = MechanismScore.new
+        mechanism_score.score = row[11]
+        mechanism_score.save
+      end
+      quality_score = QualityScore.find_by_score( row[12] )
+      unless quality_score
+        quality_score = QualityScore.new
+        quality_score.score = row[12]
+        quality_score.save
+      end
+      value_score = ValueScore.find_by_score( row[13] )
+      unless value_score
+        value_score = ValueScore.new
+        value_score.score = row[13]
+        value_score.save
+      end
     
       # Create review
       review = Review.new
@@ -120,49 +133,13 @@ task :import_reviews => :environment do
       review.reviewed_as_part_of_trainset = row[2]
       review.youtube_url = row[1]
       review.model = model
+      review.haulage_capability = haulage_capability
+      review.detail_score = detail_score
+      review.performance_score = performance_score
+      review.mechanism_score = mechanism_score
+      review.quality_score = quality_score
+      review.value_score = value_score
       review.save
-      
-      # Create link to scores
-      coach = Coach.find_by_number( row[10] )
-      haulage_capability = HaulageCapability.new
-      haulage_capability.review = review
-      haulage_capability.coach = coach
-      haulage_capability.save
-      
-      # Create link to detail score.
-      score = Score.find_by_score( row[8] )
-      detail_score = DetailScore.new
-      detail_score.review = review
-      detail_score.score = score
-      detail_score.save
-      
-      # Create link to performance score.
-      score = Score.find_by_score( row[9] )
-      performance_score = PerformanceScore.new
-      performance_score.review = review
-      performance_score.score = score
-      performance_score.save
-      
-      # Create link to mechanism score.
-      score = Score.find_by_score( row[11] )
-      mechanism_score = MechanismScore.new
-      mechanism_score.review = review
-      mechanism_score.score = score
-      mechanism_score.save
-      
-      # Create link to quality score.
-      score = Score.find_by_score( row[12] )
-      quality_score = QualityScore.new
-      quality_score.review = review
-      quality_score.score = score
-      quality_score.save
-      
-      # Create link to value score.
-      score = Score.find_by_score( row[13] )
-      value_score = ValueScore.new
-      value_score.review = review
-      value_score.score = score
-      value_score.save
     end
   end
 end
