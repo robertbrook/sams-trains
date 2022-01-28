@@ -1,0 +1,8 @@
+<%= content_tag( 'h1', @model.title ) %>
+
+<%= content_tag( 'h2', 'The model' ) %>
+<%= render :partial => 'details', :object => @model %>
+
+<%= content_tag( 'h2', 'Reviews' ) %>
+<%= render :partial => 'review', :collection => @model.reviews %>
+	
