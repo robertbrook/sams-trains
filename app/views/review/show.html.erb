@@ -2,6 +2,32 @@
 <%= content_tag( 'p', "Reviewed by Sam on: #{@review.published_on.strftime( '%d-%m-%Y' )}" ) %>
 <%= content_tag( 'p', "Overall score: #{@review.score}" ) %>
 
+<%= content_tag( 'h2', 'The Model' ) %>
+<table>
+	<tbody>
+		<tr>
+			<%= content_tag( 'th', 'Scale:' ) %>
+			<%= content_tag( 'td', @review.scale_name ) %>
+		</tr>
+		<tr>
+			<%= content_tag( 'th', 'Manufacturer:' ) %>
+			<%= content_tag( 'td', @review.manufacturer_name ) %>
+		</tr>
+		<tr>
+			<%= content_tag( 'th', 'Class:' ) %>
+			<%= content_tag( 'td', @review.locomotive_class_name ) %>
+		</tr>
+		<tr>
+			<%= content_tag( 'th', 'Operator:' ) %>
+			<%= content_tag( 'td', @review.operator_name ) %>
+		</tr>
+		<tr>
+			<%= content_tag( 'th', 'Livery:' ) %>
+			<%= content_tag( 'td', @review.livery_name ) %>
+		</tr>
+	</tbody>
+</table>
+
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/<%= @review.youtube_id %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
