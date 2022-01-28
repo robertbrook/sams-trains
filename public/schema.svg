@@ -28,7 +28,7 @@
       </g>
     </marker>
   </defs>
-  <metadata> Produced by OmniGraffle 7.18.6\n2022-01-27 22:35:03 +0000</metadata>
+  <metadata> Produced by OmniGraffle 7.18.6\n2022-01-28 15:47:45 +0000</metadata>
   <g id="Canvas_1" stroke-opacity="1" stroke-dasharray="none" fill="none" stroke="none" fill-opacity="1">
     <title>Canvas 1</title>
     <rect fill="white" x="-547" y="-134.75" width="1687" height="877"/>
@@ -66,8 +66,8 @@
         <title>Class with Attributes</title>
         <g id="Graphic_7">
           <title>Attributes</title>
-          <rect x="573.5" y="455" width="261.5" height="74" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-          <text transform="translate(579.5 461)" fill="#515556">
+          <rect x="562" y="-15" width="261.5" height="74" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(568 -9)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" font-weight="400" fill="#515556" x="0" y="13">id</tspan>
             <tspan font-family="Avenir" font-size="13" font-weight="400" fill="#515556" x="0" y="35">name</tspan>
             <tspan font-family="Avenir" font-size="13" font-weight="400" fill="#515556" x="0" y="57">wikidata_id</tspan>
@@ -75,8 +75,8 @@
         </g>
         <g id="Graphic_6">
           <title>Class Name</title>
-          <rect x="573.5" y="429" width="261.5" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-          <text transform="translate(579.5 433)" fill="#515556">
+          <rect x="562" y="-41" width="261.5" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(568 -37)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" font-weight="800" fill="#515556" x="84.3005" y="13">manufacturer</tspan>
           </text>
         </g>
@@ -85,8 +85,8 @@
         <title>Class with Attributes</title>
         <g id="Graphic_10">
           <title>Attributes</title>
-          <rect x="234.5" y="444" width="261.5" height="96" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-          <text transform="translate(240.5 450)" fill="#515556">
+          <rect x="382" y="431" width="261.5" height="96" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(388 437)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" font-weight="400" fill="#515556" x="0" y="13">id</tspan>
             <tspan font-family="Avenir" font-size="13" font-weight="400" fill="#515556" x="0" y="35">name</tspan>
             <tspan font-family="Avenir" font-size="13" font-weight="400" fill="#515556" x="0" y="57">nickname</tspan>
@@ -95,8 +95,8 @@
         </g>
         <g id="Graphic_9">
           <title>Class Name</title>
-          <rect x="234.5" y="418" width="261.5" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-          <text transform="translate(240.5 422)" fill="#515556">
+          <rect x="382" y="405" width="261.5" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(388 409)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" font-weight="800" fill="#515556" x="67.095" y="13">locomotive_classes</tspan>
           </text>
         </g>
@@ -124,10 +124,10 @@
         </g>
       </g>
       <g id="Line_14">
-        <line x1="386.95148" y1="406.0617" x2="438.82094" y2="346.45577" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <line x1="512.75" y1="389.5" x2="512.75" y2="351" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
       <g id="Line_15">
-        <line x1="678.8452" y1="418.0545" x2="601.5393" y2="345.1891" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <line x1="638.1015" y1="69.51384" x2="542.8133" y2="152.36165" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
       <g id="Group_16">
         <title>Class with Attributes</title>
@@ -160,22 +160,22 @@
         <title>Class with Attributes</title>
         <g id="Graphic_23">
           <title>Attributes</title>
-          <rect x="382" y="9" width="261.5" height="52" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-          <text transform="translate(388 15)" fill="#515556">
+          <rect x="234.5" y="-4" width="261.5" height="52" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(240.5 2)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" font-weight="400" fill="#515556" x="0" y="13">id</tspan>
             <tspan font-family="Avenir" font-size="13" font-weight="400" fill="#515556" x="0" y="35">name</tspan>
           </text>
         </g>
         <g id="Graphic_22">
           <title>Class Name</title>
-          <rect x="382" y="-17" width="261.5" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-          <text transform="translate(388 -13)" fill="#515556">
+          <rect x="234.5" y="-30" width="261.5" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(240.5 -26)" fill="#515556">
             <tspan font-family="Avenir" font-size="13" font-weight="800" fill="#515556" x="106.9335" y="13">scales</tspan>
           </text>
         </g>
       </g>
       <g id="Line_24">
-        <line x1="512.75" y1="76.5" x2="512.75" y2="146" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <line x1="400.64243" y1="59.55197" x2="486.8665" y2="151.03714" marker-end="url(#CrowBall_Marker)" marker-start="url(#DoubleBar_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
       <g id="Group_25">
         <title>Class with Attributes</title>
