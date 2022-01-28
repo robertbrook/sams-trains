@@ -1,5 +1,11 @@
 <%= content_tag( 'h1', @operator.name ) %>
 
 <%= content_tag( 'h2', link_to( "#{@operator.name} models", operator_model_list_url ) ) %>
-
+<ol>
+	<%= render :partial => 'model/model', :collection => @operator.models %>
+</ol>
 <%= content_tag( 'h2', link_to( "#{@operator.name} liveries", operator_livery_list_url ) ) %>
+
+<ol>
+	<%= render :partial => 'livery/livery', :collection => @operator.liveries %>
+</ol>
