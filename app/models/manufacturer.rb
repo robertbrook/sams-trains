@@ -18,4 +18,8 @@ class Manufacturer < ApplicationRecord
   def wikidata_url
     "https://www.wikidata.org/wiki/" + self.wikidata_id
   end
+  
+  def wikipedia_url
+    "https://www.wikidata.org/wiki/Special:GoToLinkedPage/enwiki/" + self.wikidata_id
+  end
 end
