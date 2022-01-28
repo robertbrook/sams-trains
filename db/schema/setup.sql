@@ -1,30 +1,18 @@
+drop table if exists reviews;
 drop table if exists haulage_capabilities;
 drop table if exists detail_scores;
 drop table if exists performance_scores;
 drop table if exists mechanism_scores;
 drop table if exists quality_scores;
 drop table if exists value_scores;
-drop table if exists reviews;
 drop table if exists models;
 drop table if exists liveries;
-drop table if exists scores;
-drop table if exists coaches;
 drop table if exists scales;
 drop table if exists locomotive_classes;
 drop table if exists manufacturers;
 drop table if exists operators;
 
 
-create table scores (
-	id serial,
-	score real not null,
-	primary key (id)
-);
-create table coaches (
-	id serial,
-	number int not null,
-	primary key (id)
-);
 create table scales (
 	id serial,
 	name varchar(20) not null,
@@ -73,6 +61,36 @@ create table models (
 	constraint fk_scale foreign key (scale_id) references scales(id),
 	primary key (id)
 );
+create table detail_scores (
+	id serial,
+	score real not null,
+	primary key (id)
+);
+create table performance_scores (
+	id serial,
+	score real not null,
+	primary key (id)
+);
+create table mechanism_scores (
+	id serial,
+	score real not null,
+	primary key (id)
+);
+create table quality_scores (
+	id serial,
+	score real not null,
+	primary key (id)
+);
+create table value_scores (
+	id serial,
+	score real not null,
+	primary key (id)
+);
+create table haulage_capabilities (
+	id serial,
+	number_of_coaches int not null,
+	primary key (id)
+);
 create table reviews (
 	id serial,
 	score real not null,
@@ -80,54 +98,17 @@ create table reviews (
 	reviewed_as_part_of_trainset boolean default false,
 	youtube_url varchar(255) not null,
 	model_id int not null,
+	detail_score_id int not null,
+	performance_score_id int not null,
+	mechanism_score_id int not null,
+	quality_score_id int not null,
+	value_score_id int not null,
+	haulage_capability_id int not null,
 	constraint fk_model foreign key (model_id) references models(id),
-	primary key (id)
-);
-create table detail_scores (
-	id serial,
-	review_id int not null,
-	score_id int not null,
-	constraint fk_review foreign key (review_id) references reviews(id),
-	constraint fk_score foreign key (score_id) references scores(id),
-	primary key (id)
-);
-create table performance_scores (
-	id serial,
-	review_id int not null,
-	score_id int not null,
-	constraint fk_review foreign key (review_id) references reviews(id),
-	constraint fk_score foreign key (score_id) references scores(id),
-	primary key (id)
-);
-create table mechanism_scores (
-	id serial,
-	review_id int not null,
-	score_id int not null,
-	constraint fk_review foreign key (review_id) references reviews(id),
-	constraint fk_score foreign key (score_id) references scores(id),
-	primary key (id)
-);
-create table quality_scores (
-	id serial,
-	review_id int not null,
-	score_id int not null,
-	constraint fk_review foreign key (review_id) references reviews(id),
-	constraint fk_score foreign key (score_id) references scores(id),
-	primary key (id)
-);
-create table value_scores (
-	id serial,
-	review_id int not null,
-	score_id int not null,
-	constraint fk_review foreign key (review_id) references reviews(id),
-	constraint fk_score foreign key (score_id) references scores(id),
-	primary key (id)
-);
-create table haulage_capabilities (
-	id serial,
-	review_id int not null,
-	coach_id int not null,
-	constraint fk_review foreign key (review_id) references reviews(id),
-	constraint fk_coach foreign key (coach_id) references coaches(id),
+	constraint fk_detail_score foreign key (detail_score_id) references detail_scores(id),
+	constraint fk_performance_score foreign key (performance_score_id) references performance_scores(id),
+	constraint fk_mechanism_score foreign key (mechanism_score_id) references mechanism_scores(id),
+	constraint fk_quality_score foreign key (quality_score_id) references quality_scores(id),
+	constraint fk_value_score foreign key (value_score_id) references value_scores(id),
 	primary key (id)
 );
