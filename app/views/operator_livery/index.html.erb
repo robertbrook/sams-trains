@@ -1,0 +1,5 @@
+<%= content_tag( 'h1', "#{@operator.name} liveries" ) %>
+
+<ol>
+	<%= render :partial => 'livery/livery', :collection => @operator.liveries %>
+</ol>
