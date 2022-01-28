@@ -1,1 +1,1 @@
-<%= content_tag( 'p', "Reviewed by Sam on: #{review.published_on.strftime( '%d-%m-%Y' )}" ) %>
+<%= content_tag( 'p', "Reviewed by Sam on: #{link_to( review.published_on.strftime( '%d-%m-%Y' ), review_show_url( :review => review ) )}".html_safe ) %>
