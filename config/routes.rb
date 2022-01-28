@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root 'home#index'
   
   get 'reviews' => 'review#index', as: :review_list
+  get 'reviews/:review' => 'review#show', as: :review_show
   
   get 'models' => 'model#index', as: :model_list
   
