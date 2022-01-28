@@ -14,4 +14,8 @@ class Manufacturer < ApplicationRecord
       "
     )
   end
+  
+  def wikidata_url
+    "https://www.wikidata.org/wiki/" + self.wikidata_id
+  end
 end
