@@ -1,4 +1,8 @@
 <li>
 	<%= content_tag( 'h2', link_to( review.title, review_show_url( :review => review ) ) ) %>
-	<%= content_tag( 'p', "Reviewed by Sam on: #{review.published_on.strftime( '%d-%m-%Y' )} with an overall score of #{review.score}" ) %>
+	<% if review.score -%>
+		<%= content_tag( 'p', "Reviewed by Sam on: #{review.published_on.strftime( '%d-%m-%Y' )} with an overall score of #{review.score}" ) %>
+	<% else -%>
+		<%= content_tag( 'p', "Reviewed by Sam on: #{review.published_on.strftime( '%d-%m-%Y' )} with no overall score given." ) %>
+	<% end -%>
 </li>
