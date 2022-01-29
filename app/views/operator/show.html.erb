@@ -1,4 +1,9 @@
-<%= content_tag( 'h1', @operator.name ) %>
+<%= content_tag( 'h1', @operator.title ) %>
+
+<%= content_tag( 'p', 'This operator is fictional.' ) if @operator.is_fictional %>
+
+<%= content_tag( 'p', link_to( 'Wikipedia', @operator.wikipedia_url ) ) if @operator.wikidata_id %>
+<%= content_tag( 'p', "Wikidata ID: #{link_to( @operator.wikidata_id, @operator.wikidata_url )}".html_safe ) if @operator.wikidata_id %>
 
 <%= content_tag( 'h2', link_to( "#{@operator.name} models", operator_model_list_url ) ) %>
 <ol>
