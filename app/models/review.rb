@@ -1,12 +1,12 @@
 class Review < ApplicationRecord
   
   belongs_to :model
-  belongs_to :haulage_capability
-  belongs_to :detail_score
-  belongs_to :performance_score
-  belongs_to :mechanism_score
-  belongs_to :quality_score
-  belongs_to :value_score
+  belongs_to :haulage_capability, optional: true
+  belongs_to :detail_score, optional: true
+  belongs_to :performance_score, optional: true
+  belongs_to :mechanism_score, optional: true
+  belongs_to :quality_score, optional: true
+  belongs_to :value_score, optional: true
   
   has_one :scale, :through => :model
   has_one :operator, :through => :model
