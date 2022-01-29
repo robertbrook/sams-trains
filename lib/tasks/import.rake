@@ -165,7 +165,7 @@ task :import_reviews => :environment do
   
         # Create review
         review = Review.new
-        review.score = row[14]
+        review.score = row[14] if column_valid?( row[14] )
         review.published_on = row[0].to_date
         review.reviewed_as_part_of_trainset = row[2]
         review.youtube_url = row[1]
