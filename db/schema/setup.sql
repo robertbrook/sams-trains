@@ -93,7 +93,7 @@ create table haulage_capabilities (
 );
 create table reviews (
 	id serial,
-	score real not null,
+	score real,
 	published_on date not null,
 	reviewed_as_part_of_trainset boolean default false,
 	youtube_url varchar(255) not null,
