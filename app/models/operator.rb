@@ -16,4 +16,18 @@ class Operator < ApplicationRecord
       "
     )
   end
+  
+  def title
+    title = self.name
+    title += ' (' + self.full_name + ')' if self.full_name
+    title
+  end
+  
+  def wikidata_url
+    "https://www.wikidata.org/wiki/" + self.wikidata_id
+  end
+  
+  def wikipedia_url
+    "https://www.wikidata.org/wiki/Special:GoToLinkedPage/enwiki/" + self.wikidata_id
+  end
 end
