@@ -66,10 +66,13 @@ end
 task :import_liveries => :environment do
   puts "importing liveries"
   CSV.open("db/data/liveries.tsv", col_sep: "\t").each do |row|
-    livery = Livery.new
-    livery.name = row[0].strip
-    livery.is_fictional = row[1].strip
-    livery.save
+    livery = Livery.find_by_name( row[0].strip )
+    unless livery
+      livery = Livery.new
+      livery.name = row[0].strip
+      livery.is_fictional = row[1].strip
+      livery.save
+    end
   end
 end
 
