@@ -1,0 +1,5 @@
+<% if performance_score.review_count -%>
+	<%= content_tag( 'li', link_to( performance_score.score, performance_score_show_url( :performance_score => performance_score ), :title => "#{performance_score.review_count.to_i} reviews" ) ) %>
+<% else -%>
+	<%= content_tag( 'li', performance_score.score ) %>
+<% end -%>
