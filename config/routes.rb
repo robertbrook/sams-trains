@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   get 'liveries/:livery' => 'livery#show', as: :livery_show
   
   get 'detail_scores' => 'detail_score#index', as: :detail_score_list
+  get 'detail_scores/:detail_score' => 'detail_score#show', as: :detail_score_show
   
   get 'performance_scores' => 'performance_score#index', as: :performance_score_list
   
