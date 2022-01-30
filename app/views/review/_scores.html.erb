@@ -1,0 +1,34 @@
+<table>
+	<thead>
+		<tr>
+			<%= content_tag( 'td', 'Category' ) %>
+			<%= content_tag( 'td', 'Score' ) %>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<%= content_tag( 'td', 'Details' ) %>
+			<%= content_tag( 'td', link_to( scores.inline_detail_score, detail_score_show_url( :detail_score => scores.detail_score_id ) ) ) %>
+		</tr>
+		<tr>
+			<%= content_tag( 'td', 'Performance' ) %>
+			<%= content_tag( 'td', scores.inline_performance_score ) %>
+		</tr>
+		<tr>
+			<%= content_tag( 'td', 'Power' ) %>
+			<%= content_tag( 'td', "#{scores.number_of_coaches} coaches" ) %>
+		</tr>
+		<tr>
+			<%= content_tag( 'td', 'Mechanism' ) %>
+			<%= content_tag( 'td', scores.inline_mechanism_score ) %>
+		</tr>
+		<tr>
+			<%= content_tag( 'td', 'Quality' ) %>
+			<%= content_tag( 'td', scores.inline_quality_score ) %>
+		</tr>
+		<tr>
+			<%= content_tag( 'td', 'Value' ) %>
+			<%= content_tag( 'td', scores.inline_value_score ) %>
+		</tr>
+	</tbody>
+</table>
