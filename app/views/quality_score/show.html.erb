@@ -1,0 +1,5 @@
+<%= content_tag( 'h1', "Quality score: #{@quality_score.score}" ) %>
+
+<ol>
+	<%= render :partial => 'review/review', :collection => @quality_score.reviews %>
+</ol>

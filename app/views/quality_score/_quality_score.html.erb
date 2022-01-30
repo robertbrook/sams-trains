@@ -1,0 +1,5 @@
+<% if quality_score.review_count -%>
+	<%= content_tag( 'li', link_to( quality_score.score, quality_score_show_url( :quality_score => quality_score ), :title => "#{quality_score.review_count.to_i} reviews" ) ) %>
+<% else -%>
+	<%= content_tag( 'li', quality_score.score ) %>
+<% end -%>
