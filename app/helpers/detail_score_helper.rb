@@ -1,0 +1,2 @@
+module DetailScoreHelper
+end
