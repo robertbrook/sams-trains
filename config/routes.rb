@@ -29,18 +29,18 @@ Rails.application.routes.draw do
   get 'liveries' => 'livery#index', as: :livery_list
   get 'liveries/:livery' => 'livery#show', as: :livery_show
   
-  get 'detail_scores' => 'detail_score#index', as: :detail_score_list
-  get 'detail_scores/:detail_score' => 'detail_score#show', as: :detail_score_show
+  get 'detail-scores' => 'detail_score#index', as: :detail_score_list
+  get 'detail-scores/:detail_score' => 'detail_score#show', as: :detail_score_show
   
-  get 'performance_scores' => 'performance_score#index', as: :performance_score_list
-  get 'performance_scores/:performance_score' => 'performance_score#show', as: :performance_score_show
+  get 'performance-scores' => 'performance_score#index', as: :performance_score_list
+  get 'performance-scores/:performance_score' => 'performance_score#show', as: :performance_score_show
   
-  get 'mechanism_scores' => 'mechanism_score#index', as: :mechanism_score_list
-  get 'mechanism_scores/:mechanism_score' => 'mechanism_score#show', as: :mechanism_score_show
+  get 'mechanism-scores' => 'mechanism_score#index', as: :mechanism_score_list
+  get 'mechanism-scores/:mechanism_score' => 'mechanism_score#show', as: :mechanism_score_show
   
-  get 'quality_scores' => 'quality_score#index', as: :quality_score_list
-  get 'quality_scores/:quality_score' => 'quality_score#show', as: :quality_score_show
+  get 'quality-scores' => 'quality_score#index', as: :quality_score_list
+  get 'quality-scores/:quality_score' => 'quality_score#show', as: :quality_score_show
   
-  get 'value_scores' => 'value_score#index', as: :value_score_list
-  get 'value_scores/:value_score' => 'value_score#show', as: :value_score_show
+  get 'value-scores' => 'value_score#index', as: :value_score_list
+  get 'value-scores/:value_score' => 'value_score#show', as: :value_score_show
 end
