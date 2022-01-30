@@ -33,10 +33,14 @@ Rails.application.routes.draw do
   get 'detail_scores/:detail_score' => 'detail_score#show', as: :detail_score_show
   
   get 'performance_scores' => 'performance_score#index', as: :performance_score_list
+  get 'performance_scores/:performance_score' => 'performance_score#show', as: :performance_score_show
   
   get 'mechanism_scores' => 'mechanism_score#index', as: :mechanism_score_list
+  get 'mechanism_scores/:mechanism_score' => 'mechanism_score#show', as: :mechanism_score_show
   
   get 'quality_scores' => 'quality_score#index', as: :quality_score_list
+  get 'quality_scores/:quality_score' => 'quality_score#show', as: :quality_score_show
   
   get 'value_scores' => 'value_score#index', as: :value_score_list
+  get 'value_scores/:value_score' => 'value_score#show', as: :value_score_show
 end
