@@ -1,5 +1,9 @@
 <%= content_tag( 'h1', @livery.name ) %>
 
+<%= content_tag( 'p', "Operator #{link_to( @livery.operator_name, operator_show_url( :operator => @livery.operator_id ) )}".html_safe ) if @livery.operator_id %>
+
+<%= content_tag( 'p', 'This livery is fictional.' ) if @livery.is_fictional %>
+
 <ol>
 	<%= render :partial => 'model/model', :collection => @livery.models %>
 </ol>
