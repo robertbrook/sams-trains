@@ -12,23 +12,22 @@
 		</tr>
 		<tr>
 			<%= content_tag( 'td', 'Performance' ) %>
-			<%= content_tag( 'td', scores.inline_performance_score ) %>
-		</tr>
+			<%= content_tag( 'td', link_to( scores.inline_performance_score, performance_score_show_url( :performance_score => scores.performance_score_id ) ) ) %>
 		<tr>
 			<%= content_tag( 'td', 'Power' ) %>
 			<%= content_tag( 'td', "#{scores.number_of_coaches} coaches" ) %>
 		</tr>
 		<tr>
 			<%= content_tag( 'td', 'Mechanism' ) %>
-			<%= content_tag( 'td', scores.inline_mechanism_score ) %>
+			<%= content_tag( 'td', link_to( scores.inline_mechanism_score, mechanism_score_show_url( :mechanism_score => scores.mechanism_score_id ) ) ) %>
 		</tr>
 		<tr>
 			<%= content_tag( 'td', 'Quality' ) %>
-			<%= content_tag( 'td', scores.inline_quality_score ) %>
+			<%= content_tag( 'td', link_to( scores.inline_quality_score, quality_score_show_url( :quality_score => scores.quality_score_id ) ) ) %>
 		</tr>
 		<tr>
 			<%= content_tag( 'td', 'Value' ) %>
-			<%= content_tag( 'td', scores.inline_value_score ) %>
+			<%= content_tag( 'td', link_to( scores.inline_value_score, value_score_show_url( :value_score => scores.value_score_id ) ) ) %>
 		</tr>
 	</tbody>
 </table>
