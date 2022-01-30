@@ -1,1 +1,5 @@
-<%= content_tag( 'li', link_to( detail_score.score, detail_score_show_url( :detail_score => detail_score ) ) ) %>
+<% if detail_score.review_count -%>
+	<%= content_tag( 'li', link_to( detail_score.score, detail_score_show_url( :detail_score => detail_score ), :title => "#{detail_score.review_count.to_i} reviews" ) ) %>
+<% else -%>
+	<%= content_tag( 'li', detail_score.score ) %>
+<% end -%>
