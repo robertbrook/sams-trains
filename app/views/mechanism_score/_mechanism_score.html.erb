@@ -1,0 +1,5 @@
+<% if mechanism_score.review_count -%>
+	<%= content_tag( 'li', link_to( mechanism_score.score, mechanism_score_show_url( :mechanism_score => mechanism_score ), :title => "#{mechanism_score.review_count.to_i} reviews" ) ) %>
+<% else -%>
+	<%= content_tag( 'li', mechanism_score.score ) %>
+<% end -%>

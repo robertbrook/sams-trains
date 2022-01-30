@@ -1,0 +1,5 @@
+<%= content_tag( 'h1', "Mechanism score: #{@mechanism_score.score}" ) %>
+
+<ol>
+	<%= render :partial => 'review/review', :collection => @mechanism_score.reviews %>
+</ol>
