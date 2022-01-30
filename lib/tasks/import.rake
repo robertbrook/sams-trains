@@ -1,6 +1,7 @@
 require 'csv'
 
 task :setup => [
+  :import_scores,
   :import_scales,
   :import_locomotive_classes,
   :import_manufacturers,
@@ -8,6 +9,48 @@ task :setup => [
   :import_liveries,
   :import_reviews
 ]
+
+task :import_scores => :environment do
+  puts "importing scores"
+  (0..10).each do |score|
+    score = score.to_f / 2
+    detail_score = DetailScore.find_by_score( score )
+    unless detail_score
+      detail_score = DetailScore.new
+      detail_score.score = score
+      detail_score.save
+    end
+    performance_score = PerformanceScore.find_by_score( score )
+    unless performance_score
+      performance_score = PerformanceScore.new
+      performance_score.score = score
+      performance_score.save
+    end
+    mechanism_score = MechanismScore.find_by_score( score )
+    unless mechanism_score
+      mechanism_score = MechanismScore.new
+      mechanism_score.score = score
+      mechanism_score.save
+    end
+    quality_score = QualityScore.find_by_score( score )
+    unless quality_score
+      quality_score = QualityScore.new
+      quality_score.score = score
+      quality_score.save
+    end
+    value_score = ValueScore.find_by_score( score )
+    unless value_score
+      value_score = ValueScore.new
+      value_score.score = score
+      value_score.save
+    end
+  end
+  (0..100).each do |coaches|
+    haulage_capability = HaulageCapability.new
+    haulage_capability.number_of_coaches = coaches
+    haulage_capability.save
+  end
+end
 
 task :import_scales => :environment do
   puts "importing scales"
@@ -116,56 +159,14 @@ task :import_reviews => :environment do
         model.livery = livery if livery
         model.save
     
-        # Create scores where scores have been populated
-        if column_valid?( row[10].strip )
-          haulage_capability = HaulageCapability.find_by_number_of_coaches( row[10].strip )
-          unless haulage_capability
-            haulage_capability = HaulageCapability.new
-            haulage_capability.number_of_coaches = row[10].strip
-            haulage_capability.save
-          end
-        end
-        if column_valid?( row[8].strip )
-          detail_score = DetailScore.find_by_score( row[8].strip )
-          unless detail_score
-            detail_score = DetailScore.new
-            detail_score.score = row[8].strip
-            detail_score.save
-          end
-        end
-        if column_valid?( row[9].strip )
-          performance_score = PerformanceScore.find_by_score( row[9].strip )
-          unless performance_score
-            performance_score = PerformanceScore.new
-            performance_score.score = row[9].strip
-            performance_score.save
-          end
-        end
-        if column_valid?( row[11].strip )
-          mechanism_score = MechanismScore.find_by_score( row[11].strip )
-          unless mechanism_score
-            mechanism_score = MechanismScore.new
-            mechanism_score.score = row[11].strip
-            mechanism_score.save
-          end
-        end
-        if column_valid?( row[12].strip )
-          quality_score = QualityScore.find_by_score( row[12].strip )
-          unless quality_score
-            quality_score = QualityScore.new
-            quality_score.score = row[12].strip
-            quality_score.save
-          end
-        end
-        if column_valid?( row[13].strip )
-          value_score = ValueScore.find_by_score( row[13].strip )
-          unless value_score
-            value_score = ValueScore.new
-            value_score.score = row[13].strip
-            value_score.save
-          end
-        end
-  
+        # Link to scores
+        haulage_capability = HaulageCapability.find_by_number_of_coaches( row[10].strip ) if column_valid?( row[10].strip )
+        detail_score = DetailScore.find_by_score( row[8].strip ) if column_valid?( row[8].strip )
+        performance_score = PerformanceScore.find_by_score( row[9].strip ) if column_valid?( row[9].strip )
+        mechanism_score = MechanismScore.find_by_score( row[11].strip ) if column_valid?( row[11].strip )
+        quality_score = QualityScore.find_by_score( row[12].strip ) if column_valid?( row[12].strip )
+        value_score = ValueScore.find_by_score( row[13].strip ) if column_valid?( row[13].strip )
+        
         # Create review
         review = Review.new
         review.score = row[14].strip if column_valid?( row[14].strip )
