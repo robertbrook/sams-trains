@@ -2,12 +2,12 @@
 <%= content_tag( 'p', "Reviewed by Sam on: #{@review.published_on.strftime( '%d-%m-%Y' )}" ) %>
 <%= content_tag( 'p', "Overall score: #{@review.score}" ) %>
 
-<%= content_tag( 'h2', 'The model' ) %>
-<%= render :partial => 'model/details', :object => @review %>
-
 <%= content_tag( 'h2', 'The review' ) %>
 <iframe width="640" height="360" src="https://www.youtube.com/embed/<%= @review.youtube_id %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <%= content_tag( 'h2', 'The scores' ) %>
 <%= render :partial => 'scores', :object => @review %>
+
+<%= content_tag( 'h2', 'The model' ) %>
+<%= render :partial => 'model/details', :object => @review %>
 
