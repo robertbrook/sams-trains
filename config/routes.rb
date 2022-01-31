@@ -35,6 +35,9 @@ Rails.application.routes.draw do
   get 'performance-scores' => 'performance_score#index', as: :performance_score_list
   get 'performance-scores/:performance_score' => 'performance_score#show', as: :performance_score_show
   
+  get 'power-scores' => 'power_score#index', as: :power_score_list
+  get 'power-scores/:power_score' => 'power_score#show', as: :power_score_show
+  
   get 'mechanism-scores' => 'mechanism_score#index', as: :mechanism_score_list
   get 'mechanism-scores/:mechanism_score' => 'mechanism_score#show', as: :mechanism_score_show
   
