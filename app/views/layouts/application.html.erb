@@ -9,7 +9,7 @@
 	</head>
 	<body>
 		<header>
-			<p>Sam's Trains</p>
+			<%= content_tag( 'p', link_to( "Sam's Trains", home_url ) ) %>
 			<nav>
 				<%= link_to( 'Reviews', review_list_url ) %>
 				&bull;
