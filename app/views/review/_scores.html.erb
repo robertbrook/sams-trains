@@ -15,7 +15,7 @@
 			<%= content_tag( 'td', link_to( scores.inline_performance_score, performance_score_show_url( :performance_score => scores.performance_score_id ) ) ) %>
 		<tr>
 			<%= content_tag( 'td', 'Power' ) %>
-			<%= content_tag( 'td', "#{scores.number_of_coaches} coaches" ) %>
+			<%= content_tag( 'td', link_to( "#{scores.number_of_coaches} coaches", power_score_show_url( :power_score => scores.haulage_capability_id ) ) ) %>
 		</tr>
 		<tr>
 			<%= content_tag( 'td', 'Mechanism' ) %>
