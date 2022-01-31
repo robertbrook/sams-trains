@@ -1,0 +1,3 @@
+<% if power_score.review_count -%>
+	<%= content_tag( 'li', link_to( "#{power_score.number_of_coaches} coaches", power_score_show_url( :power_score => power_score ), :title => "#{power_score.review_count.to_i} reviews" ) ) %>
+<% end -%>

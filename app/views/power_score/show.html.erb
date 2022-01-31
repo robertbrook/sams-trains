@@ -1,0 +1,5 @@
+<%= content_tag( 'h1', "Power score: #{@power_score.number_of_coaches} coaches" ) %>
+
+<ol>
+	<%= render :partial => 'review/review', :collection => @power_score.reviews %>
+</ol>
