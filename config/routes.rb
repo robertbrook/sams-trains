@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   root 'home#index', as: :home
   
-  get 'reviews' => 'review#index', as: :review_list
+  get 'reviews' => 'review#grid', as: :review_grid
+  get 'reviews/list' => 'review#index', as: :review_list
   get 'reviews/:review' => 'review#show', as: :review_show
   
   get 'models' => 'model#index', as: :model_list
