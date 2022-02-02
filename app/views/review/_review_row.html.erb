@@ -1,0 +1,13 @@
+<tr>
+	<%= content_tag( 'td', link_to( review_row.published_on, review_row.youtube_url ) ) %>
+	<%= content_tag( 'td', review_row.reviewed_as_part_of_trainset ) %>
+	<%= content_tag( 'td', link_to( review_row.manufacturer_name, manufacturer_show_url( :manufacturer => review_row.manufacturer_id ) ) ) %>
+	<%= content_tag( 'td', link_to( review_row.scale_name, scale_show_url( :scale => review_row.scale_id ) ) ) %>
+	<%= content_tag( 'td', link_to( review_row.operator_name, operator_show_url( :operator => review_row.operator_id ) ) ) %>
+	<%= content_tag( 'td', link_to( review_row.locomotive_class_name, class_show_url( :class => review_row.locomotive_class_id ) ) ) %>
+	<%= content_tag( 'td', link_to( review_row.livery_name, livery_show_url( :livery => review_row.livery_id ) ) ) %>
+	<%= content_tag( 'td', link_to( review_row.detail_score_score, detail_score_show_url( :detail_score => review_row.detail_score_id ) ) ) %>
+	<%= content_tag( 'td', link_to( review_row.performance_score_score, performance_score_show_url( :performance_score => review_row.performance_score_id ) ) ) %>
+	<td></td>
+	<%= content_tag( 'td', link_to( review_row.mechanism_score_score, mechanism_score_show_url( :mechanism_score => review_row.mechanism_score_id ) ) ) %>
+</tr>

@@ -1,0 +1,23 @@
+<%= content_tag( 'h1', 'Reviews' ) %>
+<table>
+	<thead>
+		<tr>
+			<%= content_tag( 'td', 'Published' ) %>
+			<%= content_tag( 'td', 'Part of train set' ) %>
+			<%= content_tag( 'td', 'Manufacturer' ) %>
+			<%= content_tag( 'td', 'Scale' ) %>
+			<%= content_tag( 'td', 'Operator' ) %>
+			<%= content_tag( 'td', 'Class' ) %>
+			<%= content_tag( 'td', 'Livery' ) %>
+			<%= content_tag( 'td', 'Detail score' ) %>
+			<%= content_tag( 'td', 'Performance score' ) %>
+			<%= content_tag( 'td', 'Power score' ) %>
+			<%= content_tag( 'td', 'Mechanism score' ) %>
+			<%= content_tag( 'td', 'Quality score' ) %>
+			<%= content_tag( 'td', 'Value score' ) %>
+		</tr>
+	</thead>
+	<tbody>
+		<%= render :partial => 'review_row', :collection => @reviews %>
+	</tbody>
+</table>
