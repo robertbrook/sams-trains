@@ -2,19 +2,20 @@
 <table>
 	<thead>
 		<tr>
-			<%= content_tag( 'td', 'Published' ) %>
-			<%= content_tag( 'td', 'Part of train set' ) %>
-			<%= content_tag( 'td', 'Manufacturer' ) %>
-			<%= content_tag( 'td', 'Scale' ) %>
-			<%= content_tag( 'td', 'Operator' ) %>
-			<%= content_tag( 'td', 'Class' ) %>
-			<%= content_tag( 'td', 'Livery' ) %>
-			<%= content_tag( 'td', 'Detail score' ) %>
-			<%= content_tag( 'td', 'Performance score' ) %>
-			<%= content_tag( 'td', 'Power score' ) %>
-			<%= content_tag( 'td', 'Mechanism score' ) %>
-			<%= content_tag( 'td', 'Quality score' ) %>
-			<%= content_tag( 'td', 'Value score' ) %>
+			<%= content_tag( 'td', link_to( 'Published', review_grid_url ) ) %>
+			<%= content_tag( 'td', link_to( 'Part of train set', review_grid_url( :order => 'train-set' ) ) ) %>
+			<%= content_tag( 'td', link_to( 'Manufacturer', review_grid_url( :order => 'manufacturer' ) ) ) %>
+			<%= content_tag( 'td', link_to( 'Scale', review_grid_url( :order => 'scale' ) ) ) %>
+			<%= content_tag( 'td', link_to( 'Operator', review_grid_url( :order => 'operator' ) ) ) %>
+			<%= content_tag( 'td', link_to( 'Class', review_grid_url( :order => 'locomotive-class' ) ) ) %>
+			<%= content_tag( 'td', link_to( 'Livery', review_grid_url( :order => 'livery' ) ) ) %>
+			<%= content_tag( 'td', link_to( 'Detail', review_grid_url( :order => 'detail-score' ) ) ) %>
+			<%= content_tag( 'td', link_to( 'Performance', review_grid_url( :order => 'performance-score' ) ) ) %>
+			<%= content_tag( 'td', link_to( 'Power', review_grid_url( :order => 'power-score' ) ) ) %>
+			<%= content_tag( 'td', link_to( 'Mechanism', review_grid_url( :order => 'mechanism-score' ) ) ) %>
+			<%= content_tag( 'td', link_to( 'Quality', review_grid_url( :order => 'quality-score' ) ) ) %>
+			<%= content_tag( 'td', link_to( 'Value', review_grid_url( :order => 'value-score' ) ) ) %>
+			<%= content_tag( 'td', link_to( 'Overall', review_grid_url( :order => 'overall-score' ) ) ) %>
 		</tr>
 	</thead>
 	<tbody>
