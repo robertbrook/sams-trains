@@ -1,4 +1,5 @@
 <%= content_tag( 'h1', 'Reviews' ) %>
+<%= render :partial => 'view_switch' %>
 <ol>
 	<%= render :partial => 'review', :collection => @reviews %>
 </ol>
